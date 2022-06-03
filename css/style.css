@@ -1,0 +1,420 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@300&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+/* flex - включает флекс разментку, выстраивает флекс элементы в ряд, контейнер будет блочным. при изменении ширины экрана, флекс элементы не ломаются, они приклеены
+inline-flex - работает как inline-block. только с флексами. Задав родителю позицию центр, весь контейнер выравляется по центру
+justify-content: flex-start; - начальная позиция флекс элементов(по умолчанию.)
+flex-end элементы строятся в конце
+center - выравнивает все по центру
+space-between - пространство между элементами, считается автоматом, равное расстояние(не отступы, при сужении экрана, контент сужается)
+space-around -добавляет пространство слева и справа КАЖДОМУ элементу ( не отступы)
+align-items - выстраивает по поперечной	оси(вертикаль)
+	align-items: flex-start; - прижимает вверх к началу контейнера.
+	flex-end - к концу прижимает
+	center - к центру, относительно большого элемента
+	base-line - по базовой линии все элементы
+	flex-wrap: nowrap элементы не перескакивают на строку, когда нет места. - применяется к флекс контейнеру.
+	wrap - перескакивают(адаптируются)
+	wrap-reverse - перекатываются на строку, но с большего в меньшее.  */
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  padding: 0px 70px 0 50px;
+  background: linear-gradient(7.58deg, #B6DBFC 2.51%, rgba(177, 212, 242, 0) 15.24%);
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+          transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.wrapper .content {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.wrapper body {
+  font-family: "Catamaran", sans-serif;
+}
+.wrapper .menu__row {
+  margin: 0 0 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .menu__column {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+}
+.wrapper .menu__column_logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.wrapper .menu__column_logo .column_logo {
+  margin: -3px 0 10px 0;
+  padding: 10px 0 0 0;
+}
+.wrapper .menu__column_logo .column_text {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 53px;
+  color: #99BAED;
+  margin: -10px 0 -3px -15px;
+}
+.wrapper .menu__column_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.wrapper .menu__column_nav a {
+  font-family: "Catamaran";
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 33px;
+  word-spacing: 48px;
+  color: #163561;
+  padding: 40px 14px 8px 14px;
+}
+.wrapper .menu__column_nav a:hover {
+  background: #A3C1EF;
+  border-radius: 0 0 5px 5px;
+  color: white;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-box-shadow: 5px 5px 10px #A3C1EF;
+          box-shadow: 5px 5px 10px #A3C1EF;
+}
+.wrapper .menu__column_login {
+  width: 416px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.wrapper .menu__column_login img {
+  width: 28px;
+  height: 30px;
+  margin: -10px 0 10px 0;
+}
+.wrapper .menu__column_login .menu__btn {
+  margin: 0 30px 0 0;
+  padding: 15px 38px;
+  height: 66px;
+  width: 168px;
+  background: #99BAED;
+  border-radius: 20px;
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 36px;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+  -webkit-box-shadow: 3px 3px 10px rgba(153, 186, 237, 0.5);
+          box-shadow: 3px 3px 10px rgba(153, 186, 237, 0.5);
+}
+.wrapper .menu__column_login .menu__btn:hover {
+  -webkit-box-shadow: 10px 10px 10px rgba(153, 186, 237, 0.5);
+          box-shadow: 10px 10px 10px rgba(153, 186, 237, 0.5);
+}
+.wrapper .btn {
+  margin: 0 30px 0 0px;
+  padding: 15px 38px;
+  height: 66px;
+  width: 168px;
+  background: #99BAED;
+  border-radius: 20px;
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 36px;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+  -webkit-box-shadow: 3px 3px 10px rgba(153, 186, 237, 0.5);
+          box-shadow: 3px 3px 10px rgba(153, 186, 237, 0.5);
+}
+.wrapper .starter {
+  margin: 170px 0 0 10px;
+}
+.wrapper .starter__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid black;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0 0 226px 0;
+}
+.wrapper .starter__column {
+  border: 1px solid red;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.333%;
+          flex: 0 0 33.333%;
+}
+.wrapper .starter__title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  font-family: "Catamaran";
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 100px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.wrapper .starter__title .mainworld {
+  color: #FBB400;
+}
+.wrapper .starter__subtitle {
+  font-family: "Catamaran";
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 30px 0 97px 0;
+  color: #153461;
+  opacity: 0.65;
+}
+.wrapper .starter__img {
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wrapper .starter__btn:hover {
+  -webkit-box-shadow: 10px 10px 10px rgba(153, 186, 237, 0.5);
+          box-shadow: 10px 10px 10px rgba(153, 186, 237, 0.5);
+}
+.wrapper .second_row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.wrapper .services {
+  font-family: "Catamaran", sans-serif;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.wrapper .services__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.wrapper .services__column {
+  width: 441px;
+  height: 533px;
+  background-color: #FAFBFF;
+  border-radius: 20px;
+  position: relative;
+  top: 83px;
+  left: -25px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33%;
+          flex: 0 0 33%;
+  margin-right: 49px;
+  -webkit-box-shadow: 0px 5px 0px #99BAED;
+          box-shadow: 0px 5px 0px #99BAED;
+}
+.wrapper .services__column:hover {
+  background-color: #99BAED;
+  -webkit-box-shadow: 15px 15px 10px #D5E5FF;
+          box-shadow: 15px 15px 10px #D5E5FF;
+}
+.wrapper .title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 82px;
+  color: #163561;
+}
+.wrapper .title span {
+  color: #fbb400;
+}
+.wrapper .item-services__icon {
+  width: 103px;
+  height: 126px;
+  border: 1px solid #E5ECFE;
+  background-color: #E5ECFE;
+  -webkit-box-shadow: 0px 5px 0px #99BAED;
+          box-shadow: 0px 5px 0px #99BAED;
+  border-radius: 29px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 50px auto;
+}
+.wrapper .item-services__title {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin: 59px auto;
+  color: #163561;
+}
+.wrapper .item-services__text {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin: 60px 41px 72px 41px;
+  color: #153461;
+}
+.wrapper .gallary {
+  margin: 272px 0 190px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrapper .gallary__img img {
+  padding: 30px;
+  max-width: 100%;
+}
+.wrapper .footer__row {
+  margin: 265px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.wrapper .footer__text {
+  margin: 36px 0 0 0;
+  font-family: "Catamaran";
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: #153461;
+  opacity: 0.65;
+}
+.wrapper .footer__line {
+  margin: 70px 0 5px 0;
+  width: 1362px;
+  height: 0px;
+  border: 1px solid #99BAED;
+}
